@@ -1,5 +1,6 @@
 #include <stdio.h>//подключение библиотек
 #include <math.h>
+#include <string.h>
 
 double X(int m,int k);
 double Y(double x,double *a,double EPS);
