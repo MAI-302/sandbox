@@ -1,0 +1,10 @@
+using System;
+
+class Laba1Class
+{
+    static void Main()
+    {
+        Console.WriteLine("Лабораторная работа №1");
+        Console.ReadKey();
+    }
+}

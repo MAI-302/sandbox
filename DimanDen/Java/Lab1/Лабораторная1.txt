@@ -1,0 +1,10 @@
+package Пакет;
+
+public class Класс 
+{
+	public static void main(String[] args)
+	{
+      System.out.println("Лабораторная работа №1");
+	}
+
+}
