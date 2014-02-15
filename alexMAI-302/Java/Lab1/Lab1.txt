@@ -1,0 +1,9 @@
+package LabJ1;
+ 
+  public class Lab1
+  {
+     public statiic void main(String[] args)
+     {
+        System.Out.PrintLn("Hello World!");
+     }
+  }
