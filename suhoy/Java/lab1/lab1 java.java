@@ -1,4 +1,4 @@
-package first;
+﻿package first;
 
 public class GO 
 {
