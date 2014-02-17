@@ -15,7 +15,6 @@ namespace ConsoleApplication1
             System.Console.WriteLine("Введите размерность матрицы (1 число)");
             n = Convert.ToInt32(System.Console.ReadLine());
             int[,] massiv = new int [n,n];
-            int[,] support = new int [n,n];
             System.Console.WriteLine("Работаем с матрицей размерности " + n + ".");
             System.Console.WriteLine("Осуществить ввод элементов матрицы вручную (1) или заполнить случайными числами (2) ?");
             inputData = Convert.ToInt32(System.Console.ReadLine());
@@ -58,13 +57,6 @@ namespace ConsoleApplication1
                         System.Console.Write(massiv[i, j] + " ");
                     }
                     System.Console.WriteLine();
-                }
-            }
-            for (i = 0; i < n; i++)
-            {
-                for (j = 0; j < n; j++)
-                {
-                    support[i, j] = massiv[i, j];
                 }
             }
             System.Console.WriteLine("Будут выведены элементы массива, расположенные ниже главной диагонали. Нажмите любую клавишу для продолжения работы программы.");
