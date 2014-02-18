@@ -11,7 +11,8 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             int inputData;
-            int i, j, n;
+            int i, j, n, min, temp;
+            bool support;
             System.Console.WriteLine("Введите размерность массива чисел.");
             n = Convert.ToInt32(System.Console.ReadLine());
             int[] massiv = new int[n];
@@ -50,11 +51,10 @@ namespace ConsoleApplication1
             System.Console.ReadKey();
             for (j = 0; j < n; j++)
             {
-                int min = j;
-                bool support = false;
+                min = j;
+                support = false;
                 for (i = 0; i < n - 1; i++)
                 {
-                    int temp;
                     if (massiv[i] > massiv[i + 1])
                     {
                         temp = massiv[i];
