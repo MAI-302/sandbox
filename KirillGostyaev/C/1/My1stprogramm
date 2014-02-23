@@ -1,0 +1,11 @@
+using System;
+
+
+class Lab1Class
+{
+    static void Main()
+    {
+          Console.WriteLine("CSKA Moskva 4ever!");
+          Console.ReadKey();
+    }
+}   
