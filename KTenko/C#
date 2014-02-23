@@ -1,0 +1,10 @@
+using System;
+
+public class Test
+{
+	public static void Main()
+	{
+		System.Console.WriteLine("Искусство рождается только от горя. И никогда от радости.");
+		System.Console.ReadKey();
+	}
+}
