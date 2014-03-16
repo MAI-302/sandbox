@@ -1,0 +1,6 @@
+c:\users\misha\documents\visual studio 2013\Projects\laba0\laba0\bin\Debug\laba0.exe.config
+c:\users\misha\documents\visual studio 2013\Projects\laba0\laba0\obj\Debug\laba0.csprojResolveAssemblyReference.cache
+c:\users\misha\documents\visual studio 2013\Projects\laba0\laba0\bin\Debug\laba0.exe
+c:\users\misha\documents\visual studio 2013\Projects\laba0\laba0\bin\Debug\laba0.pdb
+c:\users\misha\documents\visual studio 2013\Projects\laba0\laba0\obj\Debug\laba0.exe
+c:\users\misha\documents\visual studio 2013\Projects\laba0\laba0\obj\Debug\laba0.pdb
