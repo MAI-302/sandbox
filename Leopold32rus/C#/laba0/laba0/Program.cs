@@ -8,8 +8,8 @@ namespace laba0
 {
     class MatrixOperations
     {
-        const int m = 5;
-        const int n = 5;
+        public const int m = 5;
+        public const int n = 5;
         const int min = 5;
         const int max = 20;
 
@@ -35,26 +35,27 @@ namespace laba0
         public static int[,] Addition(int[,] matrix1, int[,] matrix2)
         {
             int[,] NewMatrix = new int[m, n];
-            try
-            {
+            if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix2.GetLength(1) != matrix2.GetLength(1)))
+                throw new IndexOutOfRangeException();
+            else
+            {               
                 for (int i = 0; i < m; i++)
                 {
                     for (int j = 0; j < n; j++)
                     {
                         NewMatrix[i, j] = matrix1[i, j] + matrix2[i, j];
+
                     }
                 }
-            }
-            catch (System.IndexOutOfRangeException)
-            {
-                Console.WriteLine("Не удается выполнить операцию.Возможно заданы разноразмерные матрицы");
-            }
+            }         
             return NewMatrix;
         }
         public static int[,] Subtraction(int[,] matrix1, int[,] matrix2)
         {
             int[,] NewMatrix = new int[m, n];
-            try
+            if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix2.GetLength(1) != matrix2.GetLength(1)))
+                throw new IndexOutOfRangeException();
+            else 
             {
                 for (int i = 0; i < m; i++)
                 {
@@ -63,17 +64,15 @@ namespace laba0
                         NewMatrix[i, j] = matrix1[i, j] - matrix2[i, j];
                     }
                 }
-            }
-            catch (System.IndexOutOfRangeException)
-            {
-                Console.WriteLine("Не удается выполнить операцию.Возможно заданы разноразмерные матрицы");
-            }
+            }            
             return NewMatrix;
         }
         public static int[,] Multiplication(int[,] matrix1, int[,] matrix2)
         {
             int[,] NewMatrix = new int[m, n];
-            try
+            if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix2.GetLength(1) != matrix2.GetLength(1)))
+                throw new IndexOutOfRangeException();
+            else 
             {
                 for (int i = 0; i < m; i++)
                 {
@@ -86,24 +85,16 @@ namespace laba0
                     }
                 }
             }
-            catch (System.IndexOutOfRangeException)
-            {
-                Console.WriteLine("Не удается выполнить операцию.Возможно заданы разноразмерные матрицы");
-            }
             return NewMatrix;
         }
     }
     class Program
     {
-        const int w = 5;
-        const int h = 5;
-
-
         static byte Case(byte n)
         {
-            var array_1 = new int[h, w];
-            var array_2 = new int[h, w];
-            var array_3 = new int[h, w];
+            var array_1 = new int[MatrixOperations.n, MatrixOperations.m];
+            var array_2 = new int[MatrixOperations.n, MatrixOperations.m];
+            var array_3 = new int[MatrixOperations.n, MatrixOperations.m];
 
             
 
@@ -160,7 +151,7 @@ namespace laba0
          static void Main() 
          {  
              MainMenu();            
-             byte n = byte.Parse(Console.ReadLine());
+             byte n = byte.Parse(Console.ReadLine());             
              Case(n);
              Console.ReadKey();
          }
