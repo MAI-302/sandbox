@@ -35,39 +35,60 @@ namespace laba0
         public static int[,] Addition(int[,] matrix1, int[,] matrix2)
         {
             int[,] NewMatrix = new int[m, n];
-            for (int i = 0; i < m; i++)
+            try
             {
-                for (int j = 0; j < n; j++)
+                for (int i = 0; i < m; i++)
                 {
-                    NewMatrix[i, j] = matrix1[i, j] + matrix2[i, j];
+                    for (int j = 0; j < n; j++)
+                    {
+                        NewMatrix[i, j] = matrix1[i, j] + matrix2[i, j];
+                    }
                 }
+            }
+            catch (System.IndexOutOfRangeException)
+            {
+                Console.WriteLine("Не удается выполнить операцию.Возможно заданы разноразмерные матрицы");
             }
             return NewMatrix;
         }
         public static int[,] Subtraction(int[,] matrix1, int[,] matrix2)
         {
             int[,] NewMatrix = new int[m, n];
-            for (int i = 0; i < m; i++)
+            try
             {
-                for (int j = 0; j < n; j++)
+                for (int i = 0; i < m; i++)
                 {
-                    NewMatrix[i, j] = matrix1[i, j] - matrix2[i, j];
+                    for (int j = 0; j < n; j++)
+                    {
+                        NewMatrix[i, j] = matrix1[i, j] - matrix2[i, j];
+                    }
                 }
+            }
+            catch (System.IndexOutOfRangeException)
+            {
+                Console.WriteLine("Не удается выполнить операцию.Возможно заданы разноразмерные матрицы");
             }
             return NewMatrix;
         }
         public static int[,] Multiplication(int[,] matrix1, int[,] matrix2)
         {
             int[,] NewMatrix = new int[m, n];
-            for (int i = 0; i < m; i++)
+            try
             {
-                for (int k = 0; k < n; k++)
+                for (int i = 0; i < m; i++)
                 {
-                    for (int j = 0; j < n; j++)
-                    {  
-                        NewMatrix[i, k] += matrix1[j, k] * matrix2[i, j];
-                    }   
+                    for (int k = 0; k < n; k++)
+                    {
+                        for (int j = 0; j < n; j++)
+                        {
+                            NewMatrix[i, k] += matrix1[j, k] * matrix2[i, j];
+                        }
+                    }
                 }
+            }
+            catch (System.IndexOutOfRangeException)
+            {
+                Console.WriteLine("Не удается выполнить операцию.Возможно заданы разноразмерные матрицы");
             }
             return NewMatrix;
         }
