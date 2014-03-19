@@ -8,15 +8,28 @@ namespace laba0_2
 {
     class Vector
     {
-        public static void Generate(int sdvig,int min, int max, ref int[] array)
+        public static void Generate(int shift,int min, int max, ref int[] array)
         {
             var Random = new Random(DateTime.Now.Millisecond);
             for (var i = 0; i < 4; i++)
-                array[i] = Random.Next(min, max)+sdvig;
+                array[i] = Random.Next(min, max)+shift;
+            if (array[0] > array[1])
+            {
+                array[0] = array[0] + array[1];
+                array[1] = array[0] - array[1];
+                array[0] = array[0] - array[1];
+            }
+            if (array[2] > array[3])
+            {
+                array[2] = array[2] + array[3];
+                array[3] = array[2] - array[3];
+                array[2] = array[2] - array[3];
+            }
         }
-        public static void Print(string title, int[] array)
+        public static void Print(string title,int i, int[] array)
         {
-            Console.WriteLine(title);
+            Console.Write(title);
+            Console.WriteLine(i+1);
             Console.Write("Начало первого: ");
             Console.WriteLine(array[0] );
             Console.Write("Конец первого: ");
@@ -30,37 +43,27 @@ namespace laba0_2
         static void Main() 
         {
             var array = new int[4];
-            int min, max, kolvo,sdvig,perese4=0;
+            int min, max, number, shift, intersection = 0;
             Console.WriteLine("введите минимальный порог");
             min = int.Parse(Console.ReadLine());
             Console.WriteLine("введите максимальный порог ");
             max = int.Parse(Console.ReadLine());
             Console.WriteLine("введите колво повторений ");
-            kolvo = int.Parse(Console.ReadLine());
+            number = int.Parse(Console.ReadLine());
             Console.WriteLine("введите сдвиг ");
-            sdvig = int.Parse(Console.ReadLine());
-            for (int i = 1; i < kolvo+1; i++)
+            shift = int.Parse(Console.ReadLine());
+            for (int i = 0; i < number; i++)
             {
-                Generate(sdvig,min, max, ref array);
-                Print("Полученные данные "+i, array);
-                for (int j = array[0]; j < array[1]; j++)
+                Generate(shift,min, max, ref array);
+                Print("Полученные данные ",i, array);
+                if (((array[2] <= array[1]) && (array[2] >= array[0])) || ((array[3] <= array[1]) && (array[3] >= array[0])))
                 {
-                    if ((j == array[2]) || (j == array[3]))
-                    {
-                        perese4++;
-                    }
+                    intersection++;                   
                 }
-                for (int j = array[0]; j > array[1]; j--)
-                {
-                    if ((j == array[2]) || (j == array[3]))
-                    {
-                        perese4++;
-                    }
-                }
+                Console.Write("Кол-во пересечений ");
+                Console.WriteLine(intersection);
                 Console.ReadLine();
-            }
-            Console.Write("Кол-во пересечений ");
-            Console.WriteLine(perese4);
+            }          
             Console.ReadLine();
         }
     }
