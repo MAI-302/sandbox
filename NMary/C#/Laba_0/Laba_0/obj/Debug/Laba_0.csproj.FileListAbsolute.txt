@@ -1,0 +1,6 @@
+c:\users\г\documents\visual studio 2013\Projects\Laba_0\Laba_0\bin\Debug\Laba_0.exe.config
+c:\users\г\documents\visual studio 2013\Projects\Laba_0\Laba_0\bin\Debug\Laba_0.exe
+c:\users\г\documents\visual studio 2013\Projects\Laba_0\Laba_0\bin\Debug\Laba_0.pdb
+c:\users\г\documents\visual studio 2013\Projects\Laba_0\Laba_0\obj\Debug\Laba_0.csprojResolveAssemblyReference.cache
+c:\users\г\documents\visual studio 2013\Projects\Laba_0\Laba_0\obj\Debug\Laba_0.exe
+c:\users\г\documents\visual studio 2013\Projects\Laba_0\Laba_0\obj\Debug\Laba_0.pdb
