@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace laba0_4
+{
+    class Program
+    {
+        static void Generation(int Time, int Step, int Coefficient)
+        {
+            int NowTime;
+            var random = new Random();
+            NowTime = DateTime.Now.Second;
+
+            while (DateTime.Now.Second != NowTime + Time)
+            {
+                Thread.Sleep(random.Next(DateTime.Now.Millisecond));
+                int result = random.Next(-Step * Coefficient, Step * Coefficient);
+                if (result<Step)
+                {
+                    Console.Write(result + " ");
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Моделируемое значение превысило порог");
+                    break;
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine("Моделирование завершено!");
+        }
+        static void Main(string[] args)
+        {
+            int Time, Step, Coefficient;
+
+            Console.WriteLine("время моделирования вводится в секундах! ");
+            Console.WriteLine("Введите время моделирования ");
+            Time = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите порог значений ");
+            Step = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите коэф. влияния порога ");
+            Coefficient = int.Parse(Console.ReadLine());
+            Generation(Time,Step,Coefficient);
+            Console.ReadKey();
+        }
+    }
+}
