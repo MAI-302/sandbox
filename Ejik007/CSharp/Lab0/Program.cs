@@ -8,63 +8,60 @@ namespace laba0_2
 {
     class Vector
     {
-        public static void Generate(int shift,int min, int max, ref int[] array)
+        public static void Generate(int shift, int min, int max, ref int a, ref int b, ref int c, ref int d)
         {
-            var Random = new Random(DateTime.Now.Millisecond);
-            for (var i = 0; i < 4; i++)
-                array[i] = Random.Next(min, max)+shift;
-            if (array[0] > array[1])
+            var Random = new Random();
+            a = Random.Next(min, max) + shift;
+            b = Random.Next(min, max) + shift;
+            c = Random.Next(min, max) + shift;
+            d = Random.Next(min, max) + shift;
+            if (a > b)
             {
-                array[0] = array[0] + array[1];
-                array[1] = array[0] - array[1];
-                array[0] = array[0] - array[1];
+                a = a + b;
+                b = a - b;
+                a = a - b;
             }
-            if (array[2] > array[3])
+            if (c > d)
             {
-                array[2] = array[2] + array[3];
-                array[3] = array[2] - array[3];
-                array[2] = array[2] - array[3];
+                c = c + d;
+                d = c - d;
+                c = c - d;
             }
         }
-        public static void Print(string title,int i, int[] array)
+        public static void Print(string title, int i, int a, int b, int c, int d)
         {
             Console.Write(title);
-            Console.WriteLine(i+1);
+            Console.WriteLine(i + 1);
             Console.Write("Начало первого: ");
-            Console.WriteLine(array[0] );
+            Console.WriteLine(a);
             Console.Write("Конец первого: ");
-            Console.WriteLine(array[1]);
+            Console.WriteLine(b);
             Console.Write("Начало второго: ");
-            Console.WriteLine(array[2]);
+            Console.WriteLine(c);
             Console.Write("Конец второго: ");
-            Console.WriteLine(array[3]);
+            Console.WriteLine(d);
         }
-        
-        static void Main() 
+
+        static void Main()
         {
-            var array = new int[4];
-            int min, max, number, shift, intersection = 0;
-            Console.WriteLine("введите минимальный порог");
-            min = int.Parse(Console.ReadLine());
-            Console.WriteLine("введите максимальный порог ");
-            max = int.Parse(Console.ReadLine());
+            int min = -100, max = 100, a = 0, b = 0, c = 0, d = 0, number, shift, intersection = 0;
             Console.WriteLine("введите колво повторений ");
             number = int.Parse(Console.ReadLine());
             Console.WriteLine("введите сдвиг ");
             shift = int.Parse(Console.ReadLine());
             for (int i = 0; i < number; i++)
             {
-                Generate(shift,min, max, ref array);
-                Print("Полученные данные ",i, array);
-                if (((array[2] >= array[0]) && (array[2] <= array[1])) || ((array[3] >= array[0]) && (array[3] <= array[1])) ||
-((array[0] >= array[2]) && (array[0] <= array[3])) || ((array[1] >= array[2]) && (array[1] <= array[3])))
+                Generate(shift, min, max, ref a, ref b, ref c, ref d);
+                Print("Полученные данные ", i, a, b, c, d);
+                if (((c >= a) && (c <= b)) || ((d >= a) && (d <= b)) ||
+((a >= c) && (a <= d)) || ((b >= c) && (b <= d)))
                 {
-                    intersection++;                   
+                    intersection++;
                 }
                 Console.Write("Кол-во пересечений ");
                 Console.WriteLine(intersection);
                 Console.ReadLine();
-            }          
+            }
             Console.ReadLine();
         }
     }
