@@ -23,12 +23,12 @@ namespace SortApp
             }
 
             CreateSortedArray(nums);
-            Sort(nums);                
+            Sort(nums);
         }
 
-        
+
         // Метод сортировки
-         
+
         static double[] CreateSortedArray(double[] nums)
         {
             double temp;
@@ -45,7 +45,7 @@ namespace SortApp
                 }
             }
 
-            return nums; 
+            return nums;
         }
         // Метод Вывода
         static void Sort(double[] nums)
@@ -57,5 +57,5 @@ namespace SortApp
             }
             Console.ReadLine();
         }
-    } 
+    }
 }
