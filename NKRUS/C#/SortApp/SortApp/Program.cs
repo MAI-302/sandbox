@@ -15,15 +15,35 @@ namespace SortApp
         {
             // ввод чисел
             double[] nums = new double[7];
-            Console.WriteLine("Введите семь чисел");
+            double[] numsnums = new double[7];
+            Console.WriteLine("Введите семь чисел для массива nums");
             for (int i = 0; i < nums.Length; i++)
             {
                 Console.Write("{0}-е число: ", i + 1);
                 nums[i] = Convert.ToDouble(Console.ReadLine());
             }
+            Console.WriteLine("Введите семь чисел для массива numsnums");
+            for (int i = 0; i < numsnums.Length; i++)
+            {
+                Console.Write("{0}-е число: ", i + 1);
+                numsnums[i] = Convert.ToDouble(Console.ReadLine());
+            }
 
             CreateSortedArray(nums);
-            Sort(nums);
+            Sort(numsnums);
+
+            // вывод
+            Console.WriteLine("Вывод отсортированного массива nums");
+            for (int i = 0; i < nums.Length; i++)
+            {
+                Console.WriteLine(nums[i]);
+            }
+            Console.WriteLine("Вывод отсортированного массива numsnums");
+            for (int i = 0; i < numsnums.Length; i++)
+            {
+                Console.WriteLine(numsnums[i]);
+            }
+            Console.ReadLine();
         }
 
 
@@ -47,15 +67,22 @@ namespace SortApp
 
             return nums;
         }
-        // Метод Вывода
-        static void Sort(double[] nums)
+        // Метод сортировки без возврата
+        static void Sort(double[] numsnums)
         {
-            Console.WriteLine("Вывод отсортированного массива");
-            for (int i = 0; i < nums.Length; i++)
+            double temp;
+            for (int i = 0; i < numsnums.Length; i++)
             {
-                Console.WriteLine(nums[i]);
+                for (int j = i + 1; j < numsnums.Length; j++)
+                {
+                    if (numsnums[i] > numsnums[j])
+                    {
+                        temp = numsnums[i];
+                        numsnums[i] = numsnums[j];
+                        numsnums[j] = temp;
+                    }
+                }
             }
-            Console.ReadLine();
         }
     }
 }

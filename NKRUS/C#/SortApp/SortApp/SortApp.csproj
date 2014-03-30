@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A067DCC2-97C9-46F7-9161-36454030B013}</ProjectGuid>
+    <ProjectGuid>{083B01FC-BE7F-488B-B713-2A08FED2EF56}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SortApp</RootNamespace>
