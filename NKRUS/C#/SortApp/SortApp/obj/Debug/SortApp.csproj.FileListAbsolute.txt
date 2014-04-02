@@ -4,3 +4,6 @@ c:\users\nkrus\documents\visual studio 2013\Projects\SortApp\SortApp\bin\Debug\S
 c:\users\nkrus\documents\visual studio 2013\Projects\SortApp\SortApp\obj\Debug\SortApp.csprojResolveAssemblyReference.cache
 c:\users\nkrus\documents\visual studio 2013\Projects\SortApp\SortApp\obj\Debug\SortApp.exe
 c:\users\nkrus\documents\visual studio 2013\Projects\SortApp\SortApp\obj\Debug\SortApp.pdb
+C:\Users\NKRUS\Documents\GitHub\sandbox\NKRUS\C#\SortApp\SortApp\bin\Debug\SortApp.exe.config
+C:\Users\NKRUS\Documents\GitHub\sandbox\NKRUS\C#\SortApp\SortApp\obj\Debug\SortApp.exe
+C:\Users\NKRUS\Documents\GitHub\sandbox\NKRUS\C#\SortApp\SortApp\obj\Debug\SortApp.pdb
