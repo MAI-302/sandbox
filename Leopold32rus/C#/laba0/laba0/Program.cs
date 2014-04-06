@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace laba0
 {
-    public class ExceedTheBounds : Exception
+    public class ExceedBoundsException : Exception
     {
-        public ExceedTheBounds()
+        public ExceedBoundsException()
             : base()
         {
             Console.WriteLine("Ошибка разменности массива");
@@ -42,7 +42,7 @@ namespace laba0
             int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];
 
             if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix2.GetLength(1) != matrix2.GetLength(1)))
-                throw new ExceedTheBounds();
+                throw new ExceedBoundsException();
             else
             {
 
@@ -62,7 +62,7 @@ namespace laba0
         {
             int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];
             if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix2.GetLength(1) != matrix2.GetLength(1)))
-                throw new MyException();
+                throw new ExceedBoundsException();
             else
             {
 
@@ -80,7 +80,7 @@ namespace laba0
         {
             int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];
             if (matrix1.GetLength(1) != matrix2.GetLength(0))
-                throw new ExceedTheBounds();
+                throw new ExceedBoundsException();
             else
             {
 
@@ -127,7 +127,7 @@ namespace laba0
                 array_3 = MatrixOperations.Addition(array_1, array_2);
                 MatrixOperations.PrintMatrix("Конечный массив(Сложение)", array_3);
             }
-            catch (ExceedTheBounds)
+            catch (ExceedBoundsException)
             {
                 Console.WriteLine("Не могу выполнить операцию 'Сложение'");
             }
@@ -136,7 +136,7 @@ namespace laba0
                 array_3 = MatrixOperations.Subtraction(array_1, array_2);
                 MatrixOperations.PrintMatrix("Конечный массив(Вычитание)", array_3);
             }
-            catch (ExceedTheBounds)
+            catch (ExceedBoundsException)
             {
                 Console.WriteLine("Не могу выполнить операцию 'Вычитание'");
             }
@@ -145,7 +145,7 @@ namespace laba0
                 array_3 = MatrixOperations.Multiplication(array_1, array_2);
                 MatrixOperations.PrintMatrix("Конечный массив(Умножение)", array_3);
             }
-            catch (ExceedTheBounds)
+            catch (ExceedBoundsException)
             {
                 Console.WriteLine("Не могу выполнить операцию 'Умножение'");
             }
