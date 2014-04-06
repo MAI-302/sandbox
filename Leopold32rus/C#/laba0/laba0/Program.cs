@@ -41,7 +41,7 @@ namespace laba0
         {
             int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];
 
-            if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix2.GetLength(1) != matrix2.GetLength(1)))
+            if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix1.GetLength(1) != matrix2.GetLength(1)))
                 throw new ExceedBoundsException();
             else
             {
@@ -61,7 +61,7 @@ namespace laba0
         public static int[,] Subtraction(int[,] matrix1, int[,] matrix2)
         {
             int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];
-            if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix2.GetLength(1) != matrix2.GetLength(1)))
+            if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix1.GetLength(1) != matrix2.GetLength(1)))
                 throw new ExceedBoundsException();
             else
             {
