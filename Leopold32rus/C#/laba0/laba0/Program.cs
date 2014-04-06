@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace laba0
 {
-    public class MyException : Exception
+    public class ExceedTheBounds : Exception
     {
-        public MyException()
+        public ExceedTheBounds()
             : base()
         {
             Console.WriteLine("Ошибка разменности массива");
@@ -40,9 +40,9 @@ namespace laba0
         public static int[,] Addition(int[,] matrix1, int[,] matrix2)
         {
             int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];
-            
+
             if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix2.GetLength(1) != matrix2.GetLength(1)))
-                    throw new MyException();
+                throw new ExceedTheBounds();
             else
             {
 
@@ -54,18 +54,18 @@ namespace laba0
 
                     }
                 }
-             }            
-            
+            }
+
             return NewMatrix;
         }
         public static int[,] Subtraction(int[,] matrix1, int[,] matrix2)
         {
             int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];
             if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix2.GetLength(1) != matrix2.GetLength(1)))
-                    throw new MyException();
+                throw new MyException();
             else
             {
-                
+
                 for (int i = 0; i < matrix1.GetLength(0); i++)
                 {
                     for (int j = 0; j < matrix1.GetLength(1); j++)
@@ -73,84 +73,84 @@ namespace laba0
                         NewMatrix[i, j] = matrix1[i, j] - matrix2[i, j];
                     }
                 }
-             }            
+            }
             return NewMatrix;
         }
         public static int[,] Multiplication(int[,] matrix1, int[,] matrix2)
         {
-           int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];
-           if (matrix1.GetLength(1) != matrix2.GetLength(0))
-               throw new MyException();
-                else
-                {
+            int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];
+            if (matrix1.GetLength(1) != matrix2.GetLength(0))
+                throw new ExceedTheBounds();
+            else
+            {
 
-                    for (int i = 0; i < matrix1.GetLength(0); i++)
+                for (int i = 0; i < matrix1.GetLength(0); i++)
+                {
+                    for (int k = 0; k < matrix1.GetLength(1); k++)
                     {
-                        for (int k = 0; k < matrix1.GetLength(1); k++)
+                        for (int j = 0; j < matrix1.GetLength(0); j++)
                         {
-                            for (int j = 0; j < matrix1.GetLength(0); j++)
-                            {
-                                NewMatrix[i, k] = matrix1[j, k] * matrix2[i, j];
-                            }
+                            NewMatrix[i, k] = matrix1[j, k] * matrix2[i, j];
                         }
                     }
                 }
-                          
-                return NewMatrix;
- 
+            }
+
+            return NewMatrix;
+
         }
 
     }
     class Program
-    {       
-         static void Main() 
-         {
-             Console.WriteLine("Введите длину массива");
-             Console.WriteLine("Первого массива");
-             int n = int.Parse(Console.ReadLine());
-             int m = int.Parse(Console.ReadLine());
-             Console.WriteLine("Второго массива");
-             int n1 = int.Parse(Console.ReadLine());
-             int m1 = int.Parse(Console.ReadLine());
+    {
+        static void Main()
+        {
+            Console.WriteLine("Введите длину массива");
+            Console.WriteLine("Первого массива");
+            int n = int.Parse(Console.ReadLine());
+            int m = int.Parse(Console.ReadLine());
+            Console.WriteLine("Второго массива");
+            int n1 = int.Parse(Console.ReadLine());
+            int m1 = int.Parse(Console.ReadLine());
 
-             var array_1 = new int[n, m];
-             var array_2 = new int[n1, m1];
-             var array_3 = new int[n, m1];
+            var array_1 = new int[n, m];
+            var array_2 = new int[n1, m1];
+            var array_3 = new int[n, m1];
 
-             
-                 MatrixOperations.FillMatrix(ref array_1);
-                 MatrixOperations.PrintMatrix("Первый массив", array_1);
-                 MatrixOperations.FillMatrix(ref array_2);
-                 MatrixOperations.PrintMatrix("Второй массив", array_2);
-                 try
-                 {
-                     array_3 = MatrixOperations.Addition(array_1, array_2);
-                     MatrixOperations.PrintMatrix("Конечный массив(Сложение)", array_3);
-                 }
-                 catch (MyException)
-                 {
-                     Console.WriteLine("Не могу выполнить операцию 'Сложение'");
-                 }
-                 try
-                 {
-                     array_3 = MatrixOperations.Subtraction(array_1, array_2);
-                     MatrixOperations.PrintMatrix("Конечный массив(Вычитание)", array_3);
-                 }
-                 catch (MyException)
-                 {
-                     Console.WriteLine("Не могу выполнить операцию 'Вычитание'");
-                 }
-                 try
-                 {
-                     array_3 = MatrixOperations.Multiplication(array_1, array_2);
-                     MatrixOperations.PrintMatrix("Конечный массив(Умножение)", array_3);
-                 }
-                 catch (MyException)
-                 {
-                     Console.WriteLine("Не могу выполнить операцию 'Умножение'");
-                 }
-             
-             Console.ReadKey();
-         }
-    }       
+
+            MatrixOperations.FillMatrix(ref array_1);
+            MatrixOperations.PrintMatrix("Первый массив", array_1);
+            MatrixOperations.FillMatrix(ref array_2);
+            MatrixOperations.PrintMatrix("Второй массив", array_2);
+            try
+            {
+                array_3 = MatrixOperations.Addition(array_1, array_2);
+                MatrixOperations.PrintMatrix("Конечный массив(Сложение)", array_3);
+            }
+            catch (ExceedTheBounds)
+            {
+                Console.WriteLine("Не могу выполнить операцию 'Сложение'");
+            }
+            try
+            {
+                array_3 = MatrixOperations.Subtraction(array_1, array_2);
+                MatrixOperations.PrintMatrix("Конечный массив(Вычитание)", array_3);
+            }
+            catch (ExceedTheBounds)
+            {
+                Console.WriteLine("Не могу выполнить операцию 'Вычитание'");
+            }
+            try
+            {
+                array_3 = MatrixOperations.Multiplication(array_1, array_2);
+                MatrixOperations.PrintMatrix("Конечный массив(Умножение)", array_3);
+            }
+            catch (ExceedTheBounds)
+            {
+                Console.WriteLine("Не могу выполнить операцию 'Умножение'");
+            }
+
+            Console.ReadKey();
+        }
+    }
 }
