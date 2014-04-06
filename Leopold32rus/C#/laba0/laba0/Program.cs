@@ -86,11 +86,11 @@ namespace laba0
 
                 for (int i = 0; i < matrix1.GetLength(0); i++)
                 {
-                    for (int k = 0; k < matrix1.GetLength(1); k++)
+                    for (int j = 0; j < matrix2.GetLength(1); j++)
                     {
-                        for (int j = 0; j < matrix1.GetLength(0); j++)
+                        for (int k = 0; k < matrix1.GetLength(1); k++)
                         {
-                            NewMatrix[i, k] = matrix1[j, k] * matrix2[i, j];
+                            NewMatrix[i,j] += matrix1[i,k] * matrix2[k,j];                           
                         }
                     }
                 }
