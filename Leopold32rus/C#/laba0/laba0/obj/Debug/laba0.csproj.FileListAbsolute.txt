@@ -4,3 +4,9 @@ c:\users\misha\documents\visual studio 2013\Projects\laba0\laba0\bin\Debug\laba0
 c:\users\misha\documents\visual studio 2013\Projects\laba0\laba0\bin\Debug\laba0.pdb
 c:\users\misha\documents\visual studio 2013\Projects\laba0\laba0\obj\Debug\laba0.exe
 c:\users\misha\documents\visual studio 2013\Projects\laba0\laba0\obj\Debug\laba0.pdb
+c:\Users\misha\Documents\Visual Studio 2013\Projects\000\laba0\laba0\bin\Debug\laba0.exe.config
+c:\Users\misha\Documents\Visual Studio 2013\Projects\000\laba0\laba0\obj\Debug\laba0.exe
+c:\Users\misha\Documents\Visual Studio 2013\Projects\000\laba0\laba0\obj\Debug\laba0.pdb
+c:\Users\misha\Documents\Visual Studio 2013\Projects\000\laba0\laba0\bin\Debug\laba0.exe
+c:\Users\misha\Documents\Visual Studio 2013\Projects\000\laba0\laba0\bin\Debug\laba0.pdb
+c:\Users\misha\Documents\Visual Studio 2013\Projects\000\laba0\laba0\obj\Debug\laba0.csprojResolveAssemblyReference.cache

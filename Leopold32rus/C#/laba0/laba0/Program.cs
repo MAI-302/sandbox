@@ -11,7 +11,7 @@ namespace laba0
         public MyException()
             : base()
         {
-            Console.WriteLine("Ошибка разменности массива");
+            Console.WriteLine("Общая ошибка");
         }
 
     }
@@ -42,8 +42,10 @@ namespace laba0
         public static int[,] Addition(int[,] matrix1, int[,] matrix2)
         {
             int[,] NewMatrix = new int[m, n];
-
-
+            if (matrix1.GetLength(1) != matrix2.GetLength(0))
+                throw new MyException();
+            else
+            {
                 for (int i = 0; i < m; i++)
                 {
                     for (int j = 0; j < n; j++)
@@ -52,15 +54,16 @@ namespace laba0
 
                     }
                 }
-            
-            
+            }         
             return NewMatrix;
         }
         public static int[,] Subtraction(int[,] matrix1, int[,] matrix2)
         {
             int[,] NewMatrix = new int[m, n];
-
-            
+            if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix2.GetLength(1) != matrix2.GetLength(1)))
+                throw new MyException();
+            else
+            {
                 for (int i = 0; i < m; i++)
                 {
                     for (int j = 0; j < n; j++)
@@ -68,13 +71,16 @@ namespace laba0
                         NewMatrix[i, j] = matrix1[i, j] - matrix2[i, j];
                     }
                 }
-                 
+            }            
             return NewMatrix;
         }
         public static int[,] Multiplication(int[,] matrix1, int[,] matrix2)
         {
             int[,] NewMatrix = new int[m, n];
-               
+            if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix2.GetLength(1) != matrix2.GetLength(1)))
+                throw new MyException();
+            else
+            {
                 for (int i = 0; i < m; i++)
                 {
                     for (int k = 0; k < n; k++)
@@ -85,8 +91,7 @@ namespace laba0
                         }
                     }
                 }
-                          
-                return NewMatrix;
+            }
             return NewMatrix;
         }
     }
@@ -98,27 +103,19 @@ namespace laba0
              var array_2 = new int[MatrixOperations.n, MatrixOperations.m];
              var array_3 = new int[MatrixOperations.n, MatrixOperations.m];
 
-             
-                 MatrixOperations.FillMatrix(ref array_1);
-                 MatrixOperations.PrintMatrix("Первый массив", array_1);
-                 MatrixOperations.FillMatrix(ref array_2);
-                 MatrixOperations.PrintMatrix("Второй массив", array_2);
-                 try
-                 {
-                     throw new MyException();
-                 array_3 = MatrixOperations.Addition(array_1, array_2);
-                 MatrixOperations.PrintMatrix("Конечный массив(Сложение)", array_3);
+             MatrixOperations.FillMatrix(ref array_1);
+             MatrixOperations.PrintMatrix("Первый массив", array_1);
+             MatrixOperations.FillMatrix(ref array_2);
+             MatrixOperations.PrintMatrix("Второй массив", array_2);
+             array_3 = MatrixOperations.Addition(array_1, array_2);
+             MatrixOperations.PrintMatrix("Конечный массив(Сложение)", array_3);
 
-                 array_3 = MatrixOperations.Subtraction(array_1, array_2);
-                 MatrixOperations.PrintMatrix("Конечный массив(Вычитание)", array_3);
+             array_3 = MatrixOperations.Subtraction(array_1, array_2);
+             MatrixOperations.PrintMatrix("Конечный массив(Вычитание)", array_3);
 
-                 array_3 = MatrixOperations.Multiplication(array_1, array_2);
-                 MatrixOperations.PrintMatrix("Конечный массив(Умножение)", array_3);
-             }
-             catch (MyException)
-             {
-                 MyException f = new MyException();
-             }
+             array_3 = MatrixOperations.Multiplication(array_1, array_2);
+             MatrixOperations.PrintMatrix("Конечный массив(Умножение)", array_3);
+
              Console.ReadKey();
          }
     }       
