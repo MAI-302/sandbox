@@ -78,9 +78,9 @@ namespace laba0
         }
         public static int[,] Multiplication(int[,] matrix1, int[,] matrix2)
         {
-           int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];            
-                if (matrix1.GetLength(1) != matrix2.GetLength(0))
-                    throw new MyException();
+           int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];
+           if (matrix1.GetLength(1) != matrix2.GetLength(0))
+               throw new MyException();
                 else
                 {
 
@@ -88,7 +88,7 @@ namespace laba0
                     {
                         for (int k = 0; k < matrix1.GetLength(1); k++)
                         {
-                            for (int j = 0; j < matrix1.GetLength(1); j++)
+                            for (int j = 0; j < matrix1.GetLength(0); j++)
                             {
                                 NewMatrix[i, k] = matrix1[j, k] * matrix2[i, j];
                             }
