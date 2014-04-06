@@ -41,7 +41,9 @@ namespace laba0
         {
             int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];
             
-            try
+            if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix2.GetLength(1) != matrix2.GetLength(1)))
+                    throw new MyException();
+            else
             {
 
                 for (int i = 0; i < matrix1.GetLength(0); i++)
@@ -52,18 +54,16 @@ namespace laba0
 
                     }
                 }
-             }
-             catch (MyException)
-             {
-                 throw new MyException();
-             }
+             }            
             
             return NewMatrix;
         }
         public static int[,] Subtraction(int[,] matrix1, int[,] matrix2)
         {
             int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];
-            try
+            if ((matrix2.GetLength(0) != matrix1.GetLength(0)) || (matrix2.GetLength(1) != matrix2.GetLength(1)))
+                    throw new MyException();
+            else
             {
                 
                 for (int i = 0; i < matrix1.GetLength(0); i++)
@@ -73,18 +73,12 @@ namespace laba0
                         NewMatrix[i, j] = matrix1[i, j] - matrix2[i, j];
                     }
                 }
-             }
-             catch (MyException)
-             {
-                 throw new MyException();
-             }
+             }            
             return NewMatrix;
         }
         public static int[,] Multiplication(int[,] matrix1, int[,] matrix2)
         {
-            int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];
-            try
-            {
+           int[,] NewMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];            
                 if (matrix1.GetLength(1) != matrix2.GetLength(0))
                     throw new MyException();
                 else
@@ -101,11 +95,7 @@ namespace laba0
                         }
                     }
                 }
-            }
-            catch (MyException e)
-            {
-               
-            }       
+                          
                 return NewMatrix;
  
         }
@@ -132,15 +122,33 @@ namespace laba0
                  MatrixOperations.PrintMatrix("Первый массив", array_1);
                  MatrixOperations.FillMatrix(ref array_2);
                  MatrixOperations.PrintMatrix("Второй массив", array_2);
-                
-                 array_3 = MatrixOperations.Addition(array_1, array_2);
-                 MatrixOperations.PrintMatrix("Конечный массив(Сложение)", array_3);
-
-                 array_3 = MatrixOperations.Subtraction(array_1, array_2);
-                 MatrixOperations.PrintMatrix("Конечный массив(Вычитание)", array_3);
-
-                 array_3 = MatrixOperations.Multiplication(array_1, array_2);
-                 MatrixOperations.PrintMatrix("Конечный массив(Умножение)", array_3);
+                 try
+                 {
+                     array_3 = MatrixOperations.Addition(array_1, array_2);
+                     MatrixOperations.PrintMatrix("Конечный массив(Сложение)", array_3);
+                 }
+                 catch (MyException)
+                 {
+                     Console.WriteLine("Не могу выполнить операцию 'Сложение'");
+                 }
+                 try
+                 {
+                     array_3 = MatrixOperations.Subtraction(array_1, array_2);
+                     MatrixOperations.PrintMatrix("Конечный массив(Вычитание)", array_3);
+                 }
+                 catch (MyException)
+                 {
+                     Console.WriteLine("Не могу выполнить операцию 'Вычитание'");
+                 }
+                 try
+                 {
+                     array_3 = MatrixOperations.Multiplication(array_1, array_2);
+                     MatrixOperations.PrintMatrix("Конечный массив(Умножение)", array_3);
+                 }
+                 catch (MyException)
+                 {
+                     Console.WriteLine("Не могу выполнить операцию 'Умножение'");
+                 }
              
              Console.ReadKey();
          }
