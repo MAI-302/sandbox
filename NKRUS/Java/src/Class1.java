@@ -56,18 +56,7 @@ public class Class1 {
             newnums[i] = a[i];
         }
 
-        for (int i = 0; i < newnums.length; i++)
-        {
-            for (int j = i + 1; j < newnums.length; j++)
-            {
-                if (newnums[i] > newnums[j])
-                {
-                    double temp = newnums[i];
-                    newnums[i] = newnums[j];
-                    newnums[j] = temp;
-                }
-            }
-        }
+        Sort(newnums);
 
         return newnums;
     }
