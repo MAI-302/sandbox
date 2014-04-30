@@ -1,0 +1,6 @@
+L:\Proga\ReadTextFile_Console\ReadTextFile_Console\bin\Debug\ReadTextFile_Console.exe.config
+L:\Proga\ReadTextFile_Console\ReadTextFile_Console\bin\Debug\ReadTextFile_Console.exe
+L:\Proga\ReadTextFile_Console\ReadTextFile_Console\bin\Debug\ReadTextFile_Console.pdb
+L:\Proga\ReadTextFile_Console\ReadTextFile_Console\obj\Debug\ReadTextFile_Console.csprojResolveAssemblyReference.cache
+L:\Proga\ReadTextFile_Console\ReadTextFile_Console\obj\Debug\ReadTextFile_Console.exe
+L:\Proga\ReadTextFile_Console\ReadTextFile_Console\obj\Debug\ReadTextFile_Console.pdb
