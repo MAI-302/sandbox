@@ -1,0 +1,8 @@
+L:\Proga\2048\2048\bin\Release\2048.exe.config
+L:\Proga\2048\2048\bin\Release\2048.exe
+L:\Proga\2048\2048\bin\Release\2048.pdb
+L:\Proga\2048\2048\obj\Release\_2048.GameForm.resources
+L:\Proga\2048\2048\obj\Release\_2048.Properties.Resources.resources
+L:\Proga\2048\2048\obj\Release\2048.csproj.GenerateResource.Cache
+L:\Proga\2048\2048\obj\Release\2048.exe
+L:\Proga\2048\2048\obj\Release\2048.pdb
