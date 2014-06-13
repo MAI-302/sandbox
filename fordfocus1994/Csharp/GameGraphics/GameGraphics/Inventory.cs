@@ -68,7 +68,7 @@ namespace GameGraphics
         /// </summary>
         public void SpotsCreation()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < Spots.Length; i++)
             {
                 Spots[i] = new Equipment();
                 Spots[i].spotImage = Image.FromFile(Environment.CurrentDirectory + @"\GamePictures\spotImage.png");
