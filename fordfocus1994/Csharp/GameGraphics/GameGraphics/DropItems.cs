@@ -17,8 +17,7 @@ namespace GameGraphics
         /// <summary>
         /// Прочие вспомогательные переменные - временное значение уровня героя для тестов, золото, количество характеристик на предмете и коэффициент усиления значений характеристик, зависящий от уровня предмета.
         /// </summary>
-        public int HeroLevel = 39, gold, statsCount1, LevelRating;
-        //public int HeroLevel { get; set; }
+        public int HeroLevel = 39, gold, statsCount1, LevelRating, ItemSpotNumber;
         /// <summary>
         /// Прочие вспомогательные переменные, необходимые для генерации предметов.
         /// </summary>
@@ -51,9 +50,9 @@ namespace GameGraphics
         string[][] ReadItemNamesFile()
         {
             int i, j;
-            int LinesCount = System.IO.File.ReadAllLines("D:\\SpotsNames.txt").Length;
+            int LinesCount = System.IO.File.ReadAllLines("L:\\SpotsNames.txt").Length;
             string[][] SpotsPossibleNames = new string[LinesCount][];
-            using (StreamReader Reader = new StreamReader("D:\\SpotsNames.txt", Encoding.Default))
+            using (StreamReader Reader = new StreamReader("L:\\SpotsNames.txt", Encoding.Default))
             {
                 while (!Reader.EndOfStream)
                 {
@@ -80,9 +79,9 @@ namespace GameGraphics
         string[][] ReadPrefixesArray()
         {
             int i, j;
-            int LinesCount = System.IO.File.ReadAllLines("D:\\PrefixesArray.txt").Length;
+            int LinesCount = System.IO.File.ReadAllLines("L:\\PrefixesArray.txt").Length;
             string[][] PrefixesArray = new string[LinesCount][];
-            using (StreamReader Reader = new StreamReader("D:\\PrefixesArray.txt", Encoding.Default))
+            using (StreamReader Reader = new StreamReader("L:\\PrefixesArray.txt", Encoding.Default))
             {
                 while (!Reader.EndOfStream)
                 {
@@ -109,9 +108,9 @@ namespace GameGraphics
         string[][] ReadSuffixesArray()
         {
             int i, j;
-            int LinesCount = System.IO.File.ReadAllLines("D:\\SuffixesArray.txt").Length;
+            int LinesCount = System.IO.File.ReadAllLines("L:\\SuffixesArray.txt").Length;
             string[][] SuffixesArray = new string[LinesCount][];
-            using (StreamReader Reader = new StreamReader("D:\\SuffixesArray.txt", Encoding.Default))
+            using (StreamReader Reader = new StreamReader("L:\\SuffixesArray.txt", Encoding.Default))
             {
                 while (!Reader.EndOfStream)
                 {
@@ -138,9 +137,9 @@ namespace GameGraphics
         int[][] ReadPrefixesStatsValuesArray()
         {
             int i, j;
-            int LinesCount = System.IO.File.ReadAllLines("D:\\PrefixesStatsValuesArray.txt").Length;
+            int LinesCount = System.IO.File.ReadAllLines("L:\\PrefixesStatsValuesArray.txt").Length;
             int[][] PrefixesStatsValuesArray = new int[LinesCount][];
-            using (StreamReader Reader = new StreamReader("D:\\PrefixesStatsValuesArray.txt", Encoding.Default))
+            using (StreamReader Reader = new StreamReader("L:\\PrefixesStatsValuesArray.txt", Encoding.Default))
             {
                 while (!Reader.EndOfStream)
                 {
@@ -167,9 +166,9 @@ namespace GameGraphics
         int[][] ReadSuffixesStatsValuesArray()
         {
             int i, j;
-            int LinesCount = System.IO.File.ReadAllLines("D:\\SuffixesStatsValuesArray.txt").Length;
+            int LinesCount = System.IO.File.ReadAllLines("L:\\SuffixesStatsValuesArray.txt").Length;
             int[][] SuffixesStatsArray = new int[LinesCount][];
-            using (StreamReader Reader = new StreamReader("D:\\SuffixesStatsValuesArray.txt", Encoding.Default))
+            using (StreamReader Reader = new StreamReader("L:\\SuffixesStatsValuesArray.txt", Encoding.Default))
             {
                 while (!Reader.EndOfStream)
                 {
@@ -196,9 +195,9 @@ namespace GameGraphics
         string[] ReadPrefixesStatsArray()
         {
             int i;
-            int LinesCount = System.IO.File.ReadAllLines("D:\\PrefixesStatsArray.txt").Length;
+            int LinesCount = System.IO.File.ReadAllLines("L:\\PrefixesStatsArray.txt").Length;
             string[] PrefixesStatsArray = new string[LinesCount];
-            using (StreamReader Reader = new StreamReader("D:\\PrefixesStatsArray.txt", Encoding.Default))
+            using (StreamReader Reader = new StreamReader("L:\\PrefixesStatsArray.txt", Encoding.Default))
             {
                 while (!Reader.EndOfStream)
                 {
@@ -218,9 +217,9 @@ namespace GameGraphics
         string[] ReadSuffixesStatsArray()
         {
             int i;
-            int LinesCount = System.IO.File.ReadAllLines("D:\\SuffixesStatsArray.txt").Length;
+            int LinesCount = System.IO.File.ReadAllLines("L:\\SuffixesStatsArray.txt").Length;
             string[] SuffixesStatsArray = new string[LinesCount];
-            using (StreamReader Reader = new StreamReader("D:\\SuffixesStatsArray.txt", Encoding.Default))
+            using (StreamReader Reader = new StreamReader("L:\\SuffixesStatsArray.txt", Encoding.Default))
             {
                 while (!Reader.EndOfStream)
                     for (i = 0; i < LinesCount; i++)
@@ -236,9 +235,9 @@ namespace GameGraphics
         int[][] ReadBorderValuesForItemLevelsGeneration()
         {
             int i, j;
-            int LinesCount = System.IO.File.ReadAllLines("D:\\BorderValuesForItemLevelGeneration.txt").Length;
+            int LinesCount = System.IO.File.ReadAllLines("L:\\BorderValuesForItemLevelGeneration.txt").Length;
             int[][] BorderValuesItemsLevels = new int[LinesCount][];
-            using (StreamReader Reader = new StreamReader("D:\\BorderValuesForItemLevelGeneration.txt", Encoding.Default))
+            using (StreamReader Reader = new StreamReader("L:\\BorderValuesForItemLevelGeneration.txt", Encoding.Default))
             {
                 while (!Reader.EndOfStream)
                     for (i = 0; i < LinesCount; i++)
@@ -261,9 +260,9 @@ namespace GameGraphics
         int[][] ReadBorderValues6Levels()
         {
             int i, j;
-            int LinesCount = System.IO.File.ReadAllLines("D:\\BorderValues6Levels.txt").Length;            
+            int LinesCount = System.IO.File.ReadAllLines("L:\\BorderValues6Levels.txt").Length;            
             int[][] BorderValues6Levels = new int[LinesCount][];
-            using (StreamReader Reader = new StreamReader("D:\\BorderValues6Levels.txt", Encoding.Default))
+            using (StreamReader Reader = new StreamReader("L:\\BorderValues6Levels.txt", Encoding.Default))
             {
                 while (!Reader.EndOfStream)
                     for (i = 0; i < LinesCount; i++)
@@ -286,9 +285,9 @@ namespace GameGraphics
         int[][] ReadBorderValues5Levels()
         {
             int i, j;
-            int LinesCount = System.IO.File.ReadAllLines("D:\\BorderValues5Levels.txt").Length;
+            int LinesCount = System.IO.File.ReadAllLines("L:\\BorderValues5Levels.txt").Length;
             int[][] BorderValues5Levels = new int[LinesCount][];
-            using (StreamReader Reader = new StreamReader("D:\\BorderValues5Levels.txt", Encoding.Default))
+            using (StreamReader Reader = new StreamReader("L:\\BorderValues5Levels.txt", Encoding.Default))
             {
                 while (!Reader.EndOfStream)
                 {
@@ -315,9 +314,9 @@ namespace GameGraphics
         int[][] ReadBorderValues2Levels()
         {
             int i, j;
-            int LinesCount = System.IO.File.ReadAllLines("D:\\BorderValues2Levels.txt").Length;
+            int LinesCount = System.IO.File.ReadAllLines("L:\\BorderValues2Levels.txt").Length;
             int[][] BorderValues2Levels = new int[LinesCount][];
-            using (StreamReader Reader = new StreamReader("D:\\BorderValues2Levels.txt", Encoding.Default))
+            using (StreamReader Reader = new StreamReader("L:\\BorderValues2Levels.txt", Encoding.Default))
             {
                 while (!Reader.EndOfStream)
                 {
@@ -338,6 +337,33 @@ namespace GameGraphics
             return BorderValues2Levels;
         }
         /// <summary>
+        /// Чтение числовых аналогов названий слотов предметов
+        /// </summary>
+        /// <returns></returns>
+        int[][] ReadSpotsNumbers()
+        {
+            int i, j;
+            int LinesCount = System.IO.File.ReadAllLines("L:\\SpotsNumbers.txt").Length;
+            int[][] SpotsNumbers = new int[LinesCount][];
+            using (StreamReader Reader = new StreamReader("L:\\SpotsNumbers.txt", Encoding.Default))
+            {
+                while (!Reader.EndOfStream)
+                {
+                    for (i = 0; i < LinesCount; i++)
+                    {
+                        string MassiveLine = Reader.ReadLine();
+                        string[] SplitLine = MassiveLine.Split(new Char[] { ' ', ',', '.', ':', '\t' });
+                        int[] Buf = new int[SplitLine.Length];
+                        for (j = 0; j < SplitLine.Length; j++)
+                            Buf[j] = Int32.Parse(SplitLine[j]);
+                        SpotsNumbers[i] = Buf;
+                    }
+                }
+                Reader.Close();
+            }
+            return SpotsNumbers;
+        }
+        /// <summary>
         /// Генерация типа предмета.
         /// </summary>
         /// <returns>Тип предмета</returns>
@@ -345,38 +371,44 @@ namespace GameGraphics
         {
             string ItemSpot = "";
             string[][] ItemSpots = ReadItemNamesFile();
+            int[][] ItemValues = ReadSpotsNumbers();
             roll = rand.Next(1, 11);
-            if (roll == 1 || roll == 2)
+            if (roll < 3)
             {
                 rollSupport = rand.Next(1,5);
-                if (rollSupport == 1 || rollSupport == 2 || rollSupport == 3)
+                if (rollSupport < 4)
                 {
                     ItemSpot = ItemSpots[0][0];
+                    ItemSpotNumber = ItemValues[0][0];
                 }
-                if (rollSupport == 4 || rollSupport == 5)
+                if (rollSupport >= 4)
                 {
                     ItemSpot = ItemSpots[0][1];
+                    ItemSpotNumber = ItemValues[0][1];
                 }
                 ItemType = "Оружие";
             }
-            else if (roll != 1 && roll != 2 && roll != 10)
+            else if (roll > 2 && roll < 10)
             {
                 rollSupport = rand.Next(1, 6);
                 if (rollSupport == 1 || rollSupport == 2)
                 {
                     rollSupportAdditional = rand.Next(1, 6);
                     ItemSpot = ItemSpots[1][rollSupportAdditional - 1];
+                    ItemSpotNumber = ItemValues[1][rollSupportAdditional - 1];
                     ItemType = "Тяжелый доспех";
                 }
                 if (rollSupport == 3 || rollSupport == 4)
                 {
                     rollSupportAdditional = rand.Next(1, 6);
-                    ItemSpot = ItemSpots[2][rollSupportAdditional - 1];                        
+                    ItemSpot = ItemSpots[2][rollSupportAdditional - 1];
+                    ItemSpotNumber = ItemValues[2][rollSupportAdditional - 1];    
                     ItemType = "Легкий доспех";
                 }
                 if (rollSupport == 5)
                 {
                     ItemSpot = ItemSpots[3][0];
+                    ItemSpotNumber = ItemValues[3][0];
                     ItemType = "Щит";
                 }
             }
@@ -384,6 +416,7 @@ namespace GameGraphics
             {
                 rollSupport = rand.Next(1, 4);
                 ItemSpot = ItemSpots[4][rollSupport - 1];
+                ItemSpotNumber = ItemValues[4][rollSupport - 1];
                 ItemType = "Аксессуар";
             }
             return ItemSpot;
@@ -466,8 +499,10 @@ namespace GameGraphics
                         return SuffixesNames[i];
             for (int i = 0; i < Prefixes[6].Length; i++)
                 if (StatNameReceived == Prefixes[6][i])
+                {
                     Prefix6Check = !Prefix6Check;
                     return PrefixesNames[Prefix6Check ? 4 : 5];
+                }
             for (int i = 0; i < Prefixes.Length; i++)
                 for (int j = 0; j < Prefixes[i].Length; j++)
                     if (StatNameReceived == Prefixes[i][j])
@@ -606,13 +641,9 @@ namespace GameGraphics
             if (Gender == "Средний")
             {
                 if (ItemPrefixLocal == "Охотнич")
-                {
                     Support = ItemPrefixLocal + "ье";
-                }
                 else
-                {
                     Support = ItemPrefixLocal + "ое";
-                }
             }
             if (Gender == "Женский")
             {

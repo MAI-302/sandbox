@@ -35,7 +35,7 @@ namespace GameGraphics
         }
 
         HeroCreation Cr = new HeroCreation();
-        Inventory Inv = new Inventory();
+        Inventory Inv = new Inventory(60, 11);
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
