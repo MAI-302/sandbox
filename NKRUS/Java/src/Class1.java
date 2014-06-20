@@ -13,26 +13,21 @@ public class Class1 {
 
 
         System.out.println("----------- Элементы исходного массива -----------------");
-        for (int i = 0; i < nums.length; ++i) {
-            System.out.print(" " + nums[i]);
-        }
+        PrintScreen(nums);
 
         newnums = CreateSortedArray(nums);
         System.out.println("----------- Элементы массива после сортировки методом CreateSortedArray -----------------");
-        for (int i = 0; i < newnums.length; ++i) {
-            System.out.print(" " + newnums[i]);
-        }
+        PrintScreen(newnums);
 
         Sort(nums);
         System.out.println("----------- Элементы массива после сортировки методом Sort -----------------");
-        for (int i = 0; i < nums.length; ++i) {
-            System.out.print(" " + nums[i]);
-        }
+        PrintScreen(nums);
+
 
 
     }
 
-    static void Sort(double[] a) {
+    private static void Sort(double[] a) {
 
         for (int i = 0; i < a.length; i++) {
             for (int j = i + 1; j < a.length; j++) {
@@ -47,12 +42,19 @@ public class Class1 {
     }
 
 
-    static double[] CreateSortedArray(double[] a) {
+    private static double[] CreateSortedArray(double[] a) {
         double[] newnums = new double[a.length];
         for (int i = 0; i < a.length; i++) {
             newnums[i] = a[i];
         }
         Sort(newnums);
         return newnums;
+    }
+
+    private static void PrintScreen(double[] a){
+        for (int i = 0; i < a.length; ++i) {
+            System.out.print(" " + a[i]);
+
+    }
     }
 }
