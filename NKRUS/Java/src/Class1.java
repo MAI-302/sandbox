@@ -9,7 +9,7 @@ public class Class1 {
     public static void main(String[] args) throws Exception {
 
         double[] nums = {2, 7, 9, 4, 15, 1, 8};
-        double[] newnums = new double[7];
+        double[] newnums = new double[nums.length];
 
 
         System.out.println("----------- Элементы исходного массива -----------------");
